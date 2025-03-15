@@ -4,9 +4,9 @@ services:
     runtime: python
     pythonVersion: 3.11
     envVars:
-      - key: PORT
+      - key: PATH
         value: 8000
     buildCommand: |
       curl https://sh.rustup.rs -sSf | sh -s -- -y
-      export PATH="$HOME/.cargo/bin:$PATH"
+      source $HOME/.cargo/env
       pip install --no-cache-dir -r requirements.txt
